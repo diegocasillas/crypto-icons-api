@@ -30,7 +30,8 @@ const generateSVG = ({ style, currency, size, color }) => {
   const colorCircle = svgContainer.getElementsByTagName("circle")[0];
   const iconCircle = svgContainer.getElementsByTagName("use")[1];
 
-  const originalSize = svgElement.getAttribute("width");
+  const DEFAULT_SIZE = 32;
+  const originalSize = svgElement.getAttribute("width") || DEFAULT_SIZE;
   svgElement.setAttribute("viewBox", `0 0 ${originalSize} ${originalSize}`);
 
   svgElement.setAttribute("width", size);
