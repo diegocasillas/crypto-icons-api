@@ -15,10 +15,9 @@ GET api/:style/:currency/:size
 
 ### Styles
 
-- `black`
-- `white`
-- `color`
-- `icon`
+`black` `white` `color` `icon`
+
+![image](https://user-images.githubusercontent.com/20227008/134777173-65d88e58-d148-4fef-8678-89bbabfdd70f.png)
 
 ### Override Colors
 
