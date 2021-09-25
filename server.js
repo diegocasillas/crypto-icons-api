@@ -6,6 +6,7 @@ const { JSDOM } = jsdom;
 const { document } = new JSDOM("").window;
 const fs = require("fs");
 const path = require("path");
+const redis = require("redis");
 
 app.use(express.static(__dirname + "/public"));
 
@@ -25,7 +26,7 @@ app.get("/api/:style/:currency/:size/:color?", async (req, res) => {
     return;
   }
 
-  var client = require("redis").createClient({
+  const client = redis.createClient({
     url: process.env.REDIS_URL,
     return_buffers: true,
   });
@@ -117,7 +118,7 @@ async function generatePNG(req, res, redis) {
   sendPNG(res, png, filename);
 }
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log("Our app is running on http://localhost:" + port)
 );
