@@ -25,13 +25,6 @@ app.get("/api/:style/:currency/:size/:color?", async (req, res) => {
     return;
   }
 
-  var redisRetryStrategy = function (options) {
-    if (options.error.code === "ECONNREFUSED") {
-      return;
-    }
-  };
-
-  const redisURL = process.env.REDIS_URL || "http://127.0.0.1:6379";
   var client = require("redis").createClient({
     url: process.env.REDIS_URL,
     return_buffers: true,
