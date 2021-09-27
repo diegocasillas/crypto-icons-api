@@ -7,6 +7,8 @@ This service is a fork from [reddavis/Crypto-Icons-API](https://github.com/redda
 
 This fork supports responses in SVG format by default and optionally in PNG format by using the query parameter `?png=true`.
 
+Try it in http://api.cryptotradingsim.com:8001/.
+
 ## API
 
 ```
